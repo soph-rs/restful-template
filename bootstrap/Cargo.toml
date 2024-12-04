@@ -5,11 +5,11 @@ license = { workspace = true }
 edition = { workspace = true }
 
 [dependencies]
+migration = { workspace = true }
 soph = { workspace = true, features = ["full", "color-eyre"] }
 soph-console = { workspace = true, features = ["commands", "status"] }
 soph-server = { workspace = true, features = ["http1", "middleware", "request", "response"] }
 soph-tracing = { workspace = true, features = ["env-filter"] }
-migration = { workspace = true }
 
 # workspace
 routes = { workspace = true }
