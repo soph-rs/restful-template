@@ -1,0 +1,24 @@
+[package]
+name = "app"
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+axum = { workspace = true }
+clap = { workspace = true }
+sea-orm = { workspace = true, features = [
+    "sqlx-sqlite",
+    "runtime-tokio-rustls",
+    "with-json",
+] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+soph = { workspace = true }
+soph-console = { workspace = true }
+soph-schedule = { workspace = true }
+soph-server = { workspace = true }
+tracing = { workspace = true }
+
+[lints]
+workspace = true

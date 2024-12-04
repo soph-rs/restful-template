@@ -1,0 +1,16 @@
+[package]
+name = "migration"
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[lib]
+name = "migration"
+path = "src/lib.rs"
+
+[dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+sea-orm-migration = { workspace = true, features = [
+    "runtime-tokio-rustls",
+    "sqlx-sqlite",
+] }

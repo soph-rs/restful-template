@@ -1,0 +1,47 @@
+[workspace]
+resolver = "2"
+members = ["app", "bootstrap", "routes", "database/migrations"]
+
+[workspace.package]
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+
+[workspace.dependencies]
+axum = { version = "0.7.9", default-features = false }
+clap = { version = "4.5.22", default-features = false }
+sea-orm = { version = "1.1.2", default-features = false }
+sea-orm-migration = { version = "1.1.2", default-features = false }
+serde = { version = "1.0.215", default-features = false }
+serde_json = { version = "1.0.133", default-features = false }
+soph = { version = "0.28.0", default-features = false }
+soph-console = { version = "0.28.0", default-features = false }
+soph-queue = { version = "0.28.0", default-features = false }
+soph-server = { version = "0.28.0", default-features = false }
+soph-schedule = { version = "0.28.0", default-features = false }
+soph-tracing = { version = "0.28.0", default-features = false }
+tokio = { version = "1.42.0", default-features = false }
+tracing = { version = "0.1.41", default-features = false }
+
+# workspace
+app = { path = "app" }
+bootstrap = { path = "bootstrap" }
+migration = { path = "database/migrations" }
+routes = { path = "routes" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unreachable_pub = "deny"
+
+[workspace.lints.clippy]
+future_not_send = "warn"
+unwrap_used = "warn"
+
+[package]
+name = "restful-template"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+soph = { workspace = true }
+bootstrap = { workspace = true }

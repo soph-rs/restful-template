@@ -1,0 +1,7 @@
+/target
+.idea
+.env.*
+cargo.lock
+.vscode
+*.log
+node_modules/

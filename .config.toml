@@ -1,0 +1,108 @@
+[app]
+environment = "development"
+debug = true
+
+[server]
+url = "0.0.0.0:8000"
+
+[server.middleware]
+body_limit = 5242880 # 5MB
+timeout = 3000 # ms
+
+[server.middleware.cors]
+allow_credentials = false
+allow_headers = []
+allow_methods = []
+allow_origins = []
+allow_private_network = false
+expose_headers = []
+max_age = 3600000 # ms (1h)
+vary = []
+
+[server.middleware.rate_limit]
+buffer = 1024
+period = 60
+
+[server.response]
+strict = false
+
+[auth]
+guard = "jwt"
+
+[auth.jwt]
+secret = "YXl1bg==" # base64 encoded
+algorithm = "HS256"
+expiration = 3600
+location = "bearer"
+
+[cache]
+driver = "null"
+
+[database]
+url = "sqlite://database/database.sqlite?mode=rwc"
+migration_path = "database/migrations"
+model_path = "app/src/models"
+max_connections = 10
+min_connections = 1
+connect_timeout = 3000 # ms
+idle_timeout = 8000 # ms
+acquire_timeout = 3000 # ms
+max_lifetime = 8000 # ms
+sqlx_logging = false
+sqlx_logging_level = "info"
+sqlx_slow_statements_logging_level = "off"
+sqlx_slow_statements_logging_threshold = 1000 # ms
+test_before_acquire = true
+
+[http]
+timeout = 3000 # ms
+pool_idle_timeout = 30000 # ms
+pool_max_idle_per_host = 10
+local_address = "127.0.0.1"
+max_retry = 3
+
+[log]
+# env_filter = ""
+level = "debug" # trace, debug, info, warn, error
+format = "compact"# compact, pretty
+with_ansi = true
+with_file = false
+with_line_number = false
+with_level = true
+with_thread_ids = false
+with_thread_names = false
+with_target = false
+
+[redis]
+url = "redis://localhost"
+max_size = 10
+min_idle = 1
+test_on_check_out = true
+max_lifetime = 1800000 # ms (30 mins)
+idle_timeout = 600000 # ms (6 mins)
+connection_timeout = 30000 # ms (30s)
+retry_connection = true
+reaper_rate = 30000 # ms (30s)
+
+[runtime]
+kind = "multi-thread"
+nevents = 1024
+max_blocking_threads = 512
+thread_name = "tokio-runtime-worker"
+event_interval = 61
+local_queue_capacity = 256
+unhandled_panic = "ignore"
+enable_metrics_poll_time_histogram = false
+disable_lifo_slot = false
+
+[storage]
+driver = "null"
+
+[view]
+path = "resources/views/**/*"
+
+[view.asset]
+url = "/public"
+path = "public"
+fallback = "public/404.html"
+gzip = true
