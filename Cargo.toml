@@ -19,7 +19,7 @@ soph-console = { version = "0.29.0", default-features = false }
 soph-queue = { version = "0.29.0", default-features = false }
 soph-server = { version = "0.29.0", default-features = false }
 soph-schedule = { version = "0.29.0", default-features = false }
-soph-tracing = { version = "0.29.0", default-features = false }
+soph-tracing = { version = "0.30.0", default-features = false }
 tokio = { version = "1.43.0", default-features = false }
 tracing = { version = "0.1.41", default-features = false }
 
