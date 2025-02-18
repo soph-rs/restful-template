@@ -15,7 +15,7 @@ sea-orm-migration = { version = "1.1.4", default-features = false }
 serde = { version = "1.0.217", default-features = false }
 serde_json = { version = "1.0.135", default-features = false }
 soph = { version = "0.29.0", default-features = false }
-soph-console = { version = "0.29.0", default-features = false }
+soph-console = { version = "0.30.0", default-features = false }
 soph-queue = { version = "0.29.0", default-features = false }
 soph-server = { version = "0.29.0", default-features = false }
 soph-schedule = { version = "0.29.0", default-features = false }
